@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Service Management</title>
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+  />
+  <style>
+    .service-card {
+      cursor: pointer;
+      transition: box-shadow 0.2s ease;
+    }
+    .service-card:hover {
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="dashboard.html">AI Chat System</a>
+      <!-- ... -->
+    </div>
+  </nav>
+
+  <div class="container mt-4">
+    <div class="d-flex justify-content-between align-items-center">
+      <h2>Service Management</h2>
+      <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addServiceModal">
+        Add Service
+      </button>
+    </div>
+    <hr />
+
+    <!-- Cards for Services -->
+    <div class="row">
+      <!-- Example service card -->
+      <div class="col-md-3 mb-4">
+        <div class="card service-card p-3" onclick="alert('Go to Service Details')">
+          <div class="card-body">
+            <h5 class="card-title">Data Extraction</h5>
+            <p class="card-text">Extract data from documents, images, etc.</p>
+          </div>
+        </div>
+      </div>
+      <!-- Add more service cards here -->
+    </div>
+  </div>
+
+  <!-- Add Service Modal -->
+  <div
+    class="modal fade"
+    id="addServiceModal"
+    tabindex="-1"
+    aria-labelledby="addServiceModalLabel"
+    aria-hidden="true"
+  >
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <form>
+          <div class="modal-header">
+            <h5 class="modal-title" id="addServiceModalLabel">Add New Service</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <!-- Service fields -->
+            <div class="mb-3">
+              <label for="serviceName" class="form-label">Service Name</label>
+              <input type="text" class="form-control" id="serviceName" required />
+            </div>
+            <div class="mb-3">
+              <label for="serviceDescription" class="form-label">Description</label>
+              <textarea
+                class="form-control"
+                id="serviceDescription"
+                rows="3"
+                required
+              ></textarea>
+            </div>
+            <div class="mb-3">
+              <label for="serviceStatus" class="form-label">Status</label>
+              <select class="form-select" id="serviceStatus">
+                <option>Active</option>
+                <option>Inactive</option>
+              </select>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Cancel
+            </button>
+            <button type="submit" class="btn btn-primary">Save Service</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
